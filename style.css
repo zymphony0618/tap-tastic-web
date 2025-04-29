@@ -1,0 +1,186 @@
+body {
+    margin: 0px;
+    font-family: "Concert One", sans-serif;
+  }
+
+header {
+    display: flex;
+    top: 0;
+    width: 100%;
+    background: linear-gradient(90deg, rgb(0, 136, 34) 0%, rgb(196, 255, 102) 50%, rgb(0, 173, 14) 100%);
+    box-shadow: 0 0 20px rgb(39, 0, 12);
+    justify-content: space-between;
+    align-items: center;
+    position: fixed;
+    z-index: 1;
+    color: white;
+    padding: 5px 15px;
+    height: 80px;
+}
+
+i {
+    padding-right: 5px;
+}
+
+nav a {
+    padding: 5px 15px;
+    text-decoration: none;
+    color: white;
+    font-size: 18px;
+    filter: blur(0);
+    transition: all 0.4s ease;
+    align-items: center;
+    height: 100%;
+    border-radius: 8px;
+}
+
+nav a:hover {
+    background-color: #daffc2;
+    color: rgb(55, 175, 0);
+    transform: scale(1.1);
+    font-size: 20px;
+    filter: drop-shadow(0px 0px 5px rgba(21, 105, 0, 0.315));
+    border-radius: 20px;
+}
+
+nav:hover a:not(:hover) {
+    filter: blur(5px);
+}
+
+.image img {
+    margin-right: 2cm;
+    height: 90px;
+    transition: transform 0.8s ease
+}
+
+.image img:hover {
+    transform: rotate(360deg) scale(2.1) translateY(20px) translateX(-10px);
+    filter: drop-shadow(0px 0px 7px rgb(255, 255, 255));
+}
+
+@keyframes slideBg {
+    from {
+      background-position: 0 0;
+    }
+    to {
+      background-position: 1000px 0;
+    }
+  }
+  
+  section.home {
+    height: 600px;
+    background-image:url(img/bgmascot.png);
+    background-size:contain;
+    background-repeat: repeat-x;
+    background-attachment: scroll; 
+    padding-top: 100px;
+    animation: slideBg 20s linear infinite;
+  }
+
+section.home div {
+text-align: center;
+    color: white;
+    margin: 80px 200px;
+    width: 70%;
+    padding: 20px;
+    font-size: 27px;
+    background-color: #00380c49;
+    text-shadow: 1px 1px black ;
+}
+
+section.home.welcome{
+font-size: 20px;
+}
+
+section.home a{
+    color: green;
+    padding: 5px 15px;
+    text-decoration: none;
+    box-shadow: 0px 0px 3px;
+    background-color: rgb(255, 255, 255);
+    border-radius: 15px;
+}
+
+section.home a:hover{
+    color: rgb(0, 26, 255);
+    background-color:aliceblue;
+}
+
+
+section.about{
+background-color: rgb(124, 201, 0);
+height: 570px;
+padding-top: 100px;
+font-size: 20px;
+}
+
+section.about div{
+    text-align: center;
+    color: white;
+    margin: 0px 200px;
+    width: 70%;
+     width : 70%;
+}
+
+section.about img{
+    height: 300px;
+    filter: drop-shadow(2px 4px 4px rgba(0, 0, 0, 0.582));
+
+}
+
+section.product{
+    background-image: url(img/bg2.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    height: 1200px;
+}
+
+section.product .container{
+    justify-content: center;
+    display: flex;
+    flex-wrap: wrap;
+    padding-top: 50px;
+}
+
+section.product .container .card{
+    background-color: rgb(136, 255, 0);
+    text-align: center;
+    padding: 5px;
+    width: 300px;
+    height: 510px;
+    margin: 15px;
+    border-radius: 40px;
+}
+
+section.product .container .card img{
+    width: 100%;
+    background-color: #bfff94;
+    border-radius: 40px;
+    filter: drop-shadow(1px 1px 4px rgba(0, 0, 0, 0.555))
+}
+
+
+section.product .container .card a{
+    color: rgb(16, 139, 0);
+    background-color: white;
+    padding: 5px 20px;
+    text-decoration: none;
+    box-shadow: 0px 0px 3px;
+    border-radius: 20px;
+}
+
+
+
+
+
+
+section.contact{
+background-color: black;
+height: 600px;
+}
+
+footer {
+    background-color: rgb(0, 13, 126);
+    height:50px;
+}
