@@ -69,7 +69,7 @@ nav:hover a:not(:hover) {
   
   section.home {
     height: 600px;
-    background-image:url(img/bgmascot.png);
+    background-image:url(img/baru.jpeg);
     background-size:contain;
     background-repeat: repeat-x;
     background-attachment: scroll; 
@@ -84,9 +84,22 @@ text-align: center;
     width: 70%;
     padding: 20px;
     font-size: 27px;
-    background-color: #00380c49;
+    background-color: #6e9c0162;
+    border-radius: 50px;
     text-shadow: 1px 1px black ;
+    animation: float 3s ease-in-out infinite;
+   
 }
+
+@keyframes float {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-10px);
+    }
+}
+
 
 section.home.welcome{
 font-size: 20px;
@@ -108,7 +121,8 @@ section.home a:hover{
 
 
 section.about{
-background-color: rgb(124, 201, 0);
+background:
+linear-gradient(180deg,rgb(255, 255, 255), rgb(184, 255, 17) , rgb(0, 201, 50));
 height: 570px;
 padding-top: 100px;
 font-size: 20px;
@@ -120,16 +134,33 @@ section.about div{
     margin: 0px 200px;
     width: 70%;
      width : 70%;
+     text-shadow: 0px 1px 3px black;
 }
 
 section.about img{
     height: 300px;
     filter: drop-shadow(2px 4px 4px rgba(0, 0, 0, 0.582));
-
+    transition: all 0.5s ease;
+}
+section.about img:hover{
+    animation: pulse 1s infinite;
 }
 
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.1);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+
 section.product{
-    background-image: url(img/bg2.jpg);
+    background-image: url(img/alam.jpg);
     background-size: cover;
     background-repeat: no-repeat;
     background-attachment: fixed;
@@ -146,20 +177,40 @@ section.product .container{
 section.product .container .card{
     background-color: rgb(136, 255, 0);
     text-align: center;
-    padding: 5px;
-    width: 300px;
-    height: 510px;
+    padding: 20px;
+    width: 270px;
+    height: 490px;
     margin: 15px;
     border-radius: 40px;
+    transition: all 0.5s ease;
 }
 
+section.product .container .card:hover{
+    transform: scale(105%);
+    box-shadow: 0px 0px 6px rgba(0, 0, 0, 0.658);
+    background-color: #ffffff;
+    color: rgb(4, 109, 0);
+}
+
+  
+
 section.product .container .card img{
-    width: 100%;
+    width: 250px;
+    height: 250px;
     background-color: #bfff94;
     border-radius: 40px;
+    animation: float 3s ease-in-out infinite;
     filter: drop-shadow(1px 1px 4px rgba(0, 0, 0, 0.555))
 }
 
+@keyframes float {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-10px);
+    }
+}
 
 section.product .container .card a{
     color: rgb(16, 139, 0);
@@ -168,19 +219,86 @@ section.product .container .card a{
     text-decoration: none;
     box-shadow: 0px 0px 3px;
     border-radius: 20px;
+    transition: all 1s ease;
 }
 
-
-
-
-
+section.product .container .card a:hover{
+    color: white;
+    background-color: green;
+}
 
 section.contact{
-background-color: black;
+background-color: rgb(92, 255, 100);
 height: 600px;
+padding: 100px;
+justify-content: center;
+align-items: center;
+display: flex;
+background-color: #c4ff81;
+
 }
 
+section.contact .card {
+    font-size: 28px;
+    margin: auto;
+    color: rgb(255, 255, 255);
+    background-color: rgb(36, 128, 0);
+    text-align: center;
+    width: 400px;
+    padding: 20px;
+    height: auto;
+    border-radius: 40px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    overflow: hidden;
+}
+
+
+section.contact .card img {
+    width: 200px;
+    height: 160px;
+    border: solid 6px rgb(160, 255, 51);
+    border-radius: 60px;
+    box-shadow: 0 10px 25px rgba(255, 255, 255, 0.575);
+    
+    animation: shake 2s ease-in-out infinite;
+}
+@keyframes shake {
+    0%   { transform: rotate(0deg); }
+    25%  { transform: rotate(6deg); }
+    50%  { transform: rotate(-6deg); }
+    75%  { transform: rotate(3deg); }
+    100% { transform: rotate(0deg); }
+  }
+
+
+
 footer {
-    background-color: rgb(0, 13, 126);
+    background: linear-gradient(90deg, rgb(0, 136, 34) 0%, rgb(196, 255, 102) 50%, rgb(0, 173, 14) 100%);
     height:50px;
+}
+footer .medsos{
+    text-align:center;
+    padding-top:10px;
+}
+footer .medsos a{
+    color:rgb(1, 56, 3);
+    font-size:20px;
+    padding:5px 20px;
+    border-radius: 180px;
+    filter: blur(0);
+    transition: all 0.4s ease;
+}
+footer .medsos a:hover{
+    color:white;
+    font-size:23px;
+    padding:5px 50px;
+    background-color: white;
+    color: rgb(0, 156, 21);
+    transform: scale(103%);
+    box-shadow: 0px 0px 5px rgba(255, 255, 255, 0.555);
+}
+
+
+.medsos:hover a:not(:hover) {
+    filter: blur(5px);
 }
