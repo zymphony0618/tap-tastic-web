@@ -7,8 +7,8 @@ header {
     display: flex;
     top: 0;
     width: 100%;
-    background: linear-gradient(90deg, rgb(0, 136, 34) 0%, rgb(196, 255, 102) 50%, rgb(0, 173, 14) 100%);
-    box-shadow: 0 0 20px rgb(39, 0, 12);
+    background: linear-gradient(90deg, rgb(20, 0, 136) 0%, rgb(141, 158, 255) 50%, rgb(35, 0, 192) 100%);
+    box-shadow: 0 0 20px rgb(15, 0, 71);
     justify-content: space-between;
     align-items: center;
     position: fixed;
@@ -35,11 +35,11 @@ nav a {
 }
 
 nav a:hover {
-    background-color: #daffc2;
-    color: rgb(55, 175, 0);
+    background-color: #ffffff;
+    color: rgb(37, 88, 255);
     transform: scale(1.1);
     font-size: 20px;
-    filter: drop-shadow(0px 0px 5px rgba(21, 105, 0, 0.315));
+    filter: drop-shadow(0px 0px 5px rgb(255, 255, 255));
     border-radius: 20px;
 }
 
@@ -55,7 +55,7 @@ nav:hover a:not(:hover) {
 
 .image img:hover {
     transform: rotate(360deg) scale(2.1) translateY(20px) translateX(-10px);
-    filter: drop-shadow(0px 0px 7px rgb(255, 255, 255));
+    filter: drop-shadow(0px 0px 5px rgb(255, 255, 255));
 }
 
 @keyframes slideBg {
@@ -69,29 +69,47 @@ nav:hover a:not(:hover) {
   
   section.home {
     height: 600px;
-    background-image:url(img/baru.jpeg);
-    background-size:contain;
+    background-image: 
+    linear-gradient(to bottom, rgba(0, 0, 0, 0) 70%, rgba(0, 0, 0, 1) 100%),
+    url(img/home);
+    background-size: cover;
     background-repeat: repeat-x;
-    background-attachment: scroll; 
+    background-attachment: scroll;
     padding-top: 100px;
     animation: slideBg 20s linear infinite;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-left: 100px;
+    padding-right: 100px;
   }
-
-section.home div {
-text-align: center;
+  
+  section.home .welcome {
     color: white;
-    margin: 80px 200px;
-    width: 70%;
+    width: 50%;
     padding: 20px;
     font-size: 27px;
-    background-color: #6e9c0162;
-    border-radius: 50px;
-    text-shadow: 1px 1px black ;
-    animation: float 3s ease-in-out infinite;
-   
-}
+    text-shadow: 1px 1px 2px black;
+    text-align: left;
+  }
+  
+  section.home .welcome h1 {
+    font-size: 69px;
+    margin-bottom: 10px;
+  }
+   section.home .welcome p{
+    font-size: 35px;
+   }
+  section.home .gambar {
 
-@keyframes float {
+    width: 50%;
+    padding-left: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  @keyframes naik {
     0%, 100% {
         transform: translateY(0);
     }
@@ -100,29 +118,40 @@ text-align: center;
     }
 }
 
+  
+  section.home .gambar img {
+    margin-top: 100px;
+    margin-left: 170px;
+    width: 1350px;
+    height: auto;
+    animation: naik 2s ease-in-out infinite;
+  }
 
-section.home.welcome{
-font-size: 20px;
-}
-
-section.home a{
-    color: green;
+  section.home a {
+    font-size: 40px;
+    color: rgb(152, 0, 223);
     padding: 5px 15px;
     text-decoration: none;
-    box-shadow: 0px 0px 3px;
+    text-shadow: none;
     background-color: rgb(255, 255, 255);
     border-radius: 15px;
-}
+    display: inline-block;
+    margin-top: 20px;
+    transition: all 0.6s ease;
+  }
 
 section.home a:hover{
-    color: rgb(0, 26, 255);
-    background-color:aliceblue;
+    font-family: 44px;
+    color: rgb(255, 255, 255);
+    background-color:rgb(174, 0, 209);
+    box-shadow: 0px 0px 10px rgb(207, 16, 255);
+    transform: scale(105%);
 }
 
 
 section.about{
 background:
-linear-gradient(180deg,rgb(255, 255, 255), rgb(184, 255, 17) , rgb(0, 201, 50));
+linear-gradient(180deg, #000000, rgb(69, 128, 255), rgb(158, 255, 223));
 height: 570px;
 padding-top: 100px;
 font-size: 20px;
@@ -134,17 +163,15 @@ section.about div{
     margin: 0px 200px;
     width: 70%;
      width : 70%;
-     text-shadow: 0px 1px 3px black;
+     text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.699);
 }
 
 section.about img{
     height: 300px;
-    filter: drop-shadow(2px 4px 4px rgba(0, 0, 0, 0.582));
-    transition: all 0.5s ease;
+    filter: drop-shadow(0px 0px 5px rgba(255, 255, 255, 0.699));
+    animation: pulse 2s infinite;
 }
-section.about img:hover{
-    animation: pulse 1s infinite;
-}
+
 
 @keyframes pulse {
   0% {
@@ -158,13 +185,17 @@ section.about img:hover{
   }
 }
 
-
 section.product{
-    background-image: url(img/alam.jpg);
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-attachment: fixed;
-    height: 1200px;
+background-image: url(img/tengah.png);
+        background-repeat: no-repeat;
+        background-attachment:fixed;
+        background-size: cover;
+        background-position: center top;
+        width: auto;
+        height: 1200px;
+        border-top: 4px solid #ffffff;
+        border-bottom: 4px solid white;
+       
 }
 
 section.product .container{
@@ -172,24 +203,26 @@ section.product .container{
     display: flex;
     flex-wrap: wrap;
     padding-top: 50px;
+    animation: float 3s ease-in-out infinite;
 }
 
 section.product .container .card{
-    background-color: rgb(136, 255, 0);
+    background-color: rgb(171, 205, 255);
     text-align: center;
     padding: 20px;
     width: 270px;
     height: 490px;
     margin: 15px;
     border-radius: 40px;
+    color: rgb(0, 0, 0);
     transition: all 0.5s ease;
 }
 
 section.product .container .card:hover{
     transform: scale(105%);
-    box-shadow: 0px 0px 6px rgba(0, 0, 0, 0.658);
-    background-color: #ffffff;
-    color: rgb(4, 109, 0);
+    box-shadow: 0px 0px 6px rgba(0, 0, 0, 0.377);
+    background-color: #0032bd;
+    color: rgb(255, 255, 255);
 }
 
   
@@ -197,10 +230,10 @@ section.product .container .card:hover{
 section.product .container .card img{
     width: 250px;
     height: 250px;
-    background-color: #bfff94;
+    background-color: #ffffffb6;
     border-radius: 40px;
-    animation: float 3s ease-in-out infinite;
-    filter: drop-shadow(1px 1px 4px rgba(0, 0, 0, 0.555))
+  
+    filter: drop-shadow(1px 1px 4px rgba(0, 0, 0, 0.39))
 }
 
 @keyframes float {
@@ -213,28 +246,30 @@ section.product .container .card img{
 }
 
 section.product .container .card a{
-    color: rgb(16, 139, 0);
-    background-color: white;
+    color: rgb(255, 255, 255);
+    background-color: rgb(58, 137, 255);
     padding: 5px 20px;
     text-decoration: none;
     box-shadow: 0px 0px 3px;
     border-radius: 20px;
-    transition: all 1s ease;
+    transition: all 0.5s ease;
 }
 
 section.product .container .card a:hover{
-    color: white;
-    background-color: green;
+    color: rgb(17, 0, 255);
+    background-color: rgb(255, 255, 255);
 }
 
 section.contact{
-background-color: rgb(92, 255, 100);
-height: 600px;
+background-image: url(img/contact.png);
+background-repeat: no-repeat;
+  background-size: 100% auto;
+  background-position: center top;
+height: 500px;
 padding: 100px;
 justify-content: center;
 align-items: center;
 display: flex;
-background-color: #c4ff81;
 
 }
 
@@ -242,7 +277,7 @@ section.contact .card {
     font-size: 28px;
     margin: auto;
     color: rgb(255, 255, 255);
-    background-color: rgb(36, 128, 0);
+    background-color: rgb(67, 0, 192);
     text-align: center;
     width: 400px;
     padding: 20px;
@@ -250,13 +285,19 @@ section.contact .card {
     border-radius: 40px;
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
     overflow: hidden;
+    transition: all 0.6s ease;
+}
+
+section.contact .card:hover{
+    transform: scale(105%);
+    background-color: #be32ff;
 }
 
 
 section.contact .card img {
     width: 200px;
     height: 160px;
-    border: solid 6px rgb(160, 255, 51);
+    border: solid 6px rgb(255, 0, 255);
     border-radius: 60px;
     box-shadow: 0 10px 25px rgba(255, 255, 255, 0.575);
     
@@ -273,15 +314,16 @@ section.contact .card img {
 
 
 footer {
-    background: linear-gradient(90deg, rgb(0, 136, 34) 0%, rgb(196, 255, 102) 50%, rgb(0, 173, 14) 100%);
+    background: linear-gradient(90deg, rgb(0, 43, 136) 0%, rgb(162, 252, 255) 50%, rgb(0, 12, 173) 100%);
     height:50px;
 }
 footer .medsos{
     text-align:center;
     padding-top:10px;
 }
+
 footer .medsos a{
-    color:rgb(1, 56, 3);
+    color:rgb(8, 1, 100);
     font-size:20px;
     padding:5px 20px;
     border-radius: 180px;
@@ -293,9 +335,9 @@ footer .medsos a:hover{
     font-size:23px;
     padding:5px 50px;
     background-color: white;
-    color: rgb(0, 156, 21);
+    color: rgb(0, 153, 255);
     transform: scale(103%);
-    box-shadow: 0px 0px 5px rgba(255, 255, 255, 0.555);
+    box-shadow: 0px 0px 5px rgb(0, 132, 255);
 }
 
 
